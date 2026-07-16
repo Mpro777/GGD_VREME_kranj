@@ -4,7 +4,7 @@ on:
   schedule:
     # 22:55 UTC je pozimi 23:55 v Sloveniji.
     # Poleti bo zagon ob 00:55 po slovenskem času.
-    - cron: "55 22 * * *"
+    - cron: "55 23 * * *"
 
   workflow_dispatch:
 
@@ -30,6 +30,11 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps chromium
 
+      - name: Ustvari potrebne mape
+        run: |
+          mkdir -p screenshots
+          mkdir -p tabela_vremena
+
       - name: Naredi screenshot
         run: python arso_screenshot.py
 
@@ -42,7 +47,7 @@ jobs:
           git config user.email "actions@github.com"
 
           git add screenshots/
-          git add ARSO_Kranj.xlsx
+          git add tabela_vremena/ARSO_Kranj.xlsx
           git add arso_kranj.sqlite
           git add arso_kranj.log
 
