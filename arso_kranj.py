@@ -26,7 +26,9 @@ from xml.sax.saxutils import escape
 URL = "https://meteo.arso.gov.si/uploads/probase/www/observ/surface/text/sl/observationAms_KRANJ_history.html"
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "arso_kranj.sqlite"
-XLSX_PATH = BASE_DIR / "ARSO_Kranj.xlsx"
+XLSX_DIR = BASE_DIR / "tabela_vremena"
+XLSX_DIR.mkdir(parents=True, exist_ok=True)
+XLSX_PATH = XLSX_DIR / "ARSO_Kranj.xlsx"
 LOG_PATH = BASE_DIR / "arso_kranj.log"
 TIMEOUT_SECONDS = 30
 
