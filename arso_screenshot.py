@@ -15,7 +15,7 @@ def naredi_posnetek():
     MAPA.mkdir(parents=True, exist_ok=True)
 
     zdaj = datetime.now(ZoneInfo("Europe/Ljubljana"))
-    ime_datoteke = zdaj.strftime("%d.%m.%Y_%H-%M") + "_KRANJ.png"
+    ime_datoteke = zdaj.strftime("%d.%m.%Y_%H:%M") + "_KRANJ.png"
     izhod = MAPA / ime_datoteke
 
     with sync_playwright() as p:
