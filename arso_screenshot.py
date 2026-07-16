@@ -15,10 +15,8 @@ def naredi_posnetek():
     MAPA.mkdir(parents=True, exist_ok=True)
 
     zdaj = datetime.now(ZoneInfo("Europe/Ljubljana"))
-    datum = zdaj.strftime("%Y-%m-%d")
-    ura = zdaj.strftime("%H-%M-%S")
-
-    izhod = MAPA / f"KRANJ_{datum}_{ura}.png"
+    ime_datoteke = zdaj.strftime("%d.%m.%Y_%H-%M") + "_KRANJ.png"
+    izhod = MAPA / ime_datoteke
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
