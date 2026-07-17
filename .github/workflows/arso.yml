@@ -2,9 +2,8 @@ name: ARSO Kranj screenshot in Excel
 
 on:
   schedule:
-    # 22:55 UTC je pozimi 23:55 v Sloveniji.
-    # Poleti bo zagon ob 00:55 po slovenskem času.
     - cron: "35 6 * * *"
+      timezone: "Europe/Ljubljana"
 
   workflow_dispatch:
 
@@ -56,5 +55,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "ARSO Kranj zajem $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "ARSO Kranj zajem $(TZ='Europe/Ljubljana' date +'%Y-%m-%d %H:%M Europe/Ljubljana')"
           git push
