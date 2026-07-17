@@ -4,7 +4,7 @@ on:
   schedule:
     # 22:55 UTC je pozimi 23:55 v Sloveniji.
     # Poleti bo zagon ob 00:55 po slovenskem času.
-    - cron: "55 23 * * *"
+    - cron: "15 6 * * *"
 
   workflow_dispatch:
 
