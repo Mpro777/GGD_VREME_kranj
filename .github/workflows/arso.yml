@@ -2,7 +2,7 @@ name: ARSO Kranj screenshot in Excel
 
 on:
   schedule:
-    - cron: "50 8 * * *"
+    - cron: "10 09 * * *"
       timezone: "Europe/Ljubljana"
 
   workflow_dispatch:
